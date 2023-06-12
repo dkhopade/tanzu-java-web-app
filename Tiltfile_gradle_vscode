@@ -8,10 +8,12 @@ k8s_custom_deploy(
                " --namespace " + NAMESPACE +
                " --yes --output yaml",
     delete_cmd="tanzu apps workload delete -f config/workload.yaml --namespace " + NAMESPACE + " --yes",
-    deps=['pom.xml', './target/classes'],
     container_selector='workload',
+
+    # Live Update VScode:
+    deps=['build.gradle.kts', './bin/main'],
     live_update=[
-      sync('./target/classes', '/workspace/BOOT-INF/classes')
+        sync('./bin/main', '/workspace/BOOT-INF/classes')
     ]
 )
 

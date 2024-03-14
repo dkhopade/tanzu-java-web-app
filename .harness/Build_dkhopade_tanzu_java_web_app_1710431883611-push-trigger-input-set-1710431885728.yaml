@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_dkhopade_tanzu_java_web_app_1710431883611-push-trigger-input-set
+  identifier: Build_dkhopade_tanzu_java_web_app_1710431883611pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: test
+  pipeline:
+    identifier: Build_dkhopade_tanzu_java_web_app_1710431883611
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
